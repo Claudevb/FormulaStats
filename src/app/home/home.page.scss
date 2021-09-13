@@ -25,3 +25,71 @@
 #container a {
   text-decoration: none;
 }
+
+ion-toolbar{
+  --background: #15151e;
+}
+
+ion-content{
+  --background:  linear-gradient(#9c2a2a, #2c1d1d);
+}
+
+.background{
+  --background: rgb(139, 139, 139);
+}
+
+.header-img{
+  height: 70px;
+  width: auto;
+  //align-items: center;
+  margin-left: 35%;
+}
+
+.search{
+  font-weight: 700;
+  color: #000000;
+
+  --background: rgb(224, 224, 224);
+}
+
+.button{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 8px;
+
+  --background: linear-gradient(#252630, #15151e);
+
+  font-weight: 700;
+  color: rgb(226, 215, 215);
+}
+
+.list-header{
+  font-weight: 800;
+  font-size: 20px;
+  color: rgb(230, 230, 230);
+  text-align: center;
+
+  --background: #15151e;
+}
+
+.list-item{
+  font-size: 14px;
+  font-weight: 600;
+
+  --background: rgb(224, 224, 224);
+}
+
+.list{
+  background: #15151e;
+}
+
+.footer-title{
+  color: rgb(167, 23, 23);
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.footer-toolbar{
+  --background: linear-gradient(#302525, #000000);
+}

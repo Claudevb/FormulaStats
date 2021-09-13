@@ -1,20 +1,57 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+        <img src="../assets/F1Logo.jpg" class="header-img" >
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content >
+  <ion-card>
+    <ion-item class="search">
+      <ion-input [(ngModel)]='season' type="any" placeholder="Enter Season..."></ion-input>
+    </ion-item>
+    <ion-item class="search">
+      <ion-input [(ngModel)]='round' type="any" placeholder="Enter Round..."></ion-input>
+    </ion-item>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <ion-button class="button" (click)='search()'  expand="block" fill="block" >
+    Search
+  </ion-button>
+
+  <ion-button class="button" (click)='drivers()'  expand="block" fill="block" >
+    Drivers
+  </ion-button>
+
+<ion-card >
+  <ion-list class="list">
+
+    <ion-list-header class="list-header">
+      <ion-label>RESULTS</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let item of (dataSeason | async)" class="list-item">
+      <ion-label> Race Name: {{item.raceName}}</ion-label>
+      <ion-label> Circuit Name: {{item.circuitName}}</ion-label>
+      <ion-label> Location: {{item.loacality}} {{item.country}}</ion-label>
+      <ion-label> Date: {{item.date}} {{item.time}}</ion-label>
+    </ion-item>
+
+    <ion-item *ngFor="let item of (dataDriver | async)" class="list-item">
+      <ion-label> Driver: {{item.givenName}} {{item.familyName}}</ion-label>
+      <ion-label> Nationality: {{item.nationality}}</ion-label>
+   </ion-item>
+
+  </ion-list>
+</ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <ion-title class="footer-title">
+      Formula 1
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
